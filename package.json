@@ -1,0 +1,69 @@
+{
+  "name": "youchain-solc",
+  "version": "0.0.5",
+  "solcVersion": "0.5.16",
+  "description": "YOUChain solidity compiler",
+  "main": "index.js",
+  "bin": {
+    "solcjs": "youchain-solcjs"
+  },
+  "scripts": {
+    "lint": "semistandard",
+    "prepublish": "node verifyVersion.js",
+    "downloadSolc": "node downloadCurrentVersion.js",
+    "pretest": "npm run lint",
+    "test": "tape ./test/index.js",
+    "coverage": "istanbul cover node_modules/tape/bin/tape ./test/index.js",
+    "coveralls": "npm run coverage && coveralls <coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youchainhq/solc-bin.git"
+  },
+  "keywords": [
+    "YOUChain",
+    "solidity",
+    "compiler"
+  ],
+  "files": [
+    "abi.js",
+    "index.js",
+    "linker.js",
+    "smtchecker.js",
+    "smtsolver.js",
+    "youchain-solcjs",
+    "soljson.js",
+    "translate.js",
+    "wrapper.js"
+  ],
+  "author": "YOUChain Foundation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/youchainhq/solc-bin/issues"
+  },
+  "homepage": "https://github.com/youchainhq/solc-bin#readme",
+  "dependencies": {
+    "command-exists": "^1.2.8",
+    "fs-extra": "^0.30.0",
+    "keccak": "^1.0.2",
+    "memorystream": "^0.3.1",
+    "require-from-string": "^2.0.0",
+    "semver": "^5.5.0",
+    "tmp": "0.0.33",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "ethereumjs-util": "^5.2.0",
+    "istanbul": "^0.4.5",
+    "semistandard": "^12.0.0",
+    "tape": "=4.9.2",
+    "tape-spawn": "^1.4.2"
+  },
+  "semistandard": {
+    "ignore": [
+      "soljson.js",
+      "*.*"
+    ]
+  }
+}
