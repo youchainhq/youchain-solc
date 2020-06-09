@@ -1,6 +1,6 @@
 {
   "name": "youchain-solc",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "solcVersion": "0.5.16",
   "description": "YOUChain solidity compiler",
   "main": "index.js",
